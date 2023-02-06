@@ -4,28 +4,31 @@ var csvData = []
 // Read line by line and push the data in csvData
 // eof: end of line
 // r: read
-csvFile.open('r') 
+csvFile.open('r')
 do {
     csvData.push(csvFile.readln())
 } while (!csvFile.eof)
 csvFile.close()
 
-// Loop the csvData array and alert every item of the row
-app.beginUndoGroup('Undo group')
+// Loops the csvData array, and for every row set the content in the selected text layer and render the comp 
 for (var csvDataIdx = 1; csvDataIdx < csvData.length; csvDataIdx++) {
     var thisCSVRow = csvData[csvDataIdx].split(',')
-    alert(thisCSVRow[0])
-    alert(thisCSVRow[1])
-    alert(thisCSVRow[2])
-    alert(thisCSVRow[3])
+    setContentInLayer(thisCSVRow[0], 'text-1')
+    setContentInLayer(thisCSVRow[1], 'text-2')
+    setContentInLayer(thisCSVRow[2], 'text-3')
+    setContentInLayer(thisCSVRow[3], 'text-4')
+    app.project.renderQueue.items.add(app.project.item(1))
+    app.project.renderQueue.render()
 }
-app.endUndoGroup()
+alert('All renders are finished')
 
-// Select _render comp
-var comp = app.project.item(1)
-// Select layer one and set new text
-var layer1 = comp.layer('text-1')
-var textProp = layer1.property("Source Text")
-var textDocument = textProp.value
-textDocument.text = "Setting from script"
-textProp.setValue(textDocument)
+function setContentInLayer(content, layer) {
+    // Select _render comp
+    var comp = app.project.item(1)
+    // Select layer and set new text
+    var layer = comp.layer(layer)
+    var textProp = layer.property("Source Text")
+    var textDocument = textProp.value
+    textDocument.text = content
+    textProp.setValue(textDocument)
+}

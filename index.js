@@ -20,3 +20,12 @@ for (var csvDataIdx = 1; csvDataIdx < csvData.length; csvDataIdx++) {
     alert(thisCSVRow[3])
 }
 app.endUndoGroup()
+
+// Select _render comp
+var comp = app.project.item(1)
+// Select layer one and set new text
+var layer1 = comp.layer('text-1')
+var textProp = layer1.property("Source Text")
+var textDocument = textProp.value
+textDocument.text = "Setting from script"
+textProp.setValue(textDocument)

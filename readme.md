@@ -42,3 +42,5 @@ This version of the script is running with this example data, to automate your o
 4. Go to the After Effects sample project. Click in *Edit > Templates - Output module templates* and set the default output to your preference.
 
 5. Run the script *index.js*
+
+(According to the content your're working on, you might need to edit the motion graphics).

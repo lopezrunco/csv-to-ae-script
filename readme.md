@@ -1,13 +1,21 @@
-## This custom script for After Effects automate the manual process of setting huge amount of text content in different layers.
+## Automate the manual process of setting huge amount of text content in different layers.
 
+Part of my job at TV is to post-produce large amounts of videos for streaming. The manual work in After Effects is: copy data from an excel file, paste it into the composition and render, then repeat this process for each video. The problem comes when the amount of data to display is too much and the videos are too many.
 
 <img src='./capture.jpg' />
 
+This script automates the whole process: For each row in the CSV file, it copies the data, sets it in the text layers, and renders the composition in the selected video format. This way, a job of hours is reduced to minutes.
+
 ## Instructions:
-- Edit the script according to your CSV file content.
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/lopezrunco/csv-to-ae-script
+   ```
+2. Export your Excel file in .csv format (values separated by commas). You can use the sample file "list.csv" for tests.
 
 ```sh
-# CSV file example:
+# .csv example data:
 
 Lote,Categoria,Cant.,Peso,Clase,Estado,Dpto,Propietario
 -------------------------------------------------------
@@ -23,8 +31,14 @@ Lote,Categoria,Cant.,Peso,Clase,Estado,Dpto,Propietario
 35,Toros,68,189 kg,MB,MB,Maldonado,BATALLA SDI
 ```
 
-- In After Effects go to Edit > Templates - Output module templates and set the default output to your preference.
+This version of the script is running with this example data, to automate your own work, you have to customize the script according to your data.
 
-- Run the script
+3. Go to index.js and edit the variable *csvFile* adding the path to the .csv file in your computer.
 
-- The script will read the CSV file and for every row, it will set the content in the text layers and render the composition. 
+```js
+    var csvFile = File('~/Documents/list.csv')
+```
+
+4. Go to the After Effects sample project. Click in *Edit > Templates - Output module templates* and set the default output to your preference.
+
+5. Run the script *index.js*

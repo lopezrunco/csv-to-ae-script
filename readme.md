@@ -50,10 +50,3 @@ This version of the script is running with this example data, to automate your o
 ```sh
     # After Effects 2022
 ```
-
-## Versions:
-
-```sh
-    # Original (index.js)
-    # Bachino names (may 2023)
-```

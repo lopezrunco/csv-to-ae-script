@@ -10,12 +10,19 @@ do {
 } while (!csvFile.eof)
 csvFile.close()
 
-// Loops the csvData array, and for every row set the content in the selected text layer and render the comp 
 for (var csvDataIdx = 1; csvDataIdx < csvData.length; csvDataIdx++) {
+    // Set content in the layers
     var thisCSVRow = csvData[csvDataIdx].split(',')
     setContentInLayer(thisCSVRow[0], '_name')
     setContentInLayer(thisCSVRow[1], '_title')
-    app.project.renderQueue.items.add(app.project.item(1))
+
+    // Apply template and customize path & file name
+    var item = app.project.renderQueue.items.add(app.project.item(1))
+    var outputModule = item.outputModule(1)
+    var outputFolder = "~/Desktop/"
+    outputModule.applyTemplate("High Quality with Alpha")
+    outputModule.file = File(outputFolder + thisCSVRow[0])
+
     app.project.renderQueue.render()
 }
 alert('All renders are finished')

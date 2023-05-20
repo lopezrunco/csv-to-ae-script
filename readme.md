@@ -53,5 +53,6 @@ This version of the script is running with this example data, to automate your o
 ## Versions:
 
 ```sh
-    # San Alberto 2023
+    # Original (index.js)
+    # Bachino names (may 2023)
 ```

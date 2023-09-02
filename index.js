@@ -1,5 +1,5 @@
-// var csvFile = File('~/Desktop/el-puesto-lotes.csv')
-var csvFile = File('~/Desktop/el-puesto-lotes-rps.csv')
+var csvFile = File('~/Desktop/santa-graciana lotes y rps.csv')
+
 var csvData = []
 
 // Read line by line and push the data in csvData
@@ -11,7 +11,7 @@ do {
 } while (!csvFile.eof)
 csvFile.close()
 
-for (var csvDataIdx = 1; csvDataIdx < csvData.length; csvDataIdx++) {
+for (var csvDataIdx = 0; csvDataIdx < csvData.length; csvDataIdx++) {
     // Set content in the layers
     var thisCSVRow = csvData[csvDataIdx].split(',')
     setContentInLayer(thisCSVRow[0], '_lote')
@@ -21,7 +21,7 @@ for (var csvDataIdx = 1; csvDataIdx < csvData.length; csvDataIdx++) {
     var item = app.project.renderQueue.items.add(app.project.activeItem)
     var outputModule = item.outputModule(1)
     var outputFolder = "~/Desktop/rendered/"
-    // outputModule.applyTemplate("PNGAlfa")
+    outputModule.applyTemplate("PNGAlfa")
     outputModule.file = File(outputFolder + thisCSVRow[0] + " " + thisCSVRow[1])
     // outputModule.file = File(outputFolder + thisCSVRow[0])
 

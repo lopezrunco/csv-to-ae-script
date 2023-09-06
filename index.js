@@ -1,4 +1,4 @@
-var csvFile = File('~/Desktop/ost-list-rp.csv')
+var csvFile = File('~/Desktop/barracas-list.csv')
 
 var csvData = []
 
@@ -14,15 +14,13 @@ csvFile.close()
 for (var csvDataIdx = 1; csvDataIdx < csvData.length; csvDataIdx++) {
     // Set content in the layers
     var thisCSVRow = csvData[csvDataIdx].split(',')
-    setContentInLayer(thisCSVRow[0], '_rp')
-    setContentInLayer('Nombre: ' + thisCSVRow[1] + ' | Nac. ' + thisCSVRow[2], '_first_line')
-    setContentInLayer('Padre: ' + thisCSVRow[3] + ' | CE: ' + thisCSVRow[4] + ' | Peso: ' + thisCSVRow[5], '_second_line')
+    setContentInLayer('RP: ' + thisCSVRow[0], '_rp')
 
     // Apply template and customize path & file name
     var item = app.project.renderQueue.items.add(app.project.activeItem)
     var outputModule = item.outputModule(1)
     var outputFolder = "~/Desktop/rendered/"
-    outputModule.applyTemplate("PNGAlfa")
+    outputModule.applyTemplate("High Quality with Alpha")
     outputModule.file = File(outputFolder + thisCSVRow[0])
 
     app.project.renderQueue.render()

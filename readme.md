@@ -53,6 +53,14 @@ This version of the script is running with this example data, to automate your o
 ## Versions:
 
 ```sh
-    # Original (index.js)
-    # Bachino names (may 2023)
+    # bachino names (may 2023)
+    # baqueano (set 2023)
+    # barracas (set 2023)
+    # delparana (set 2023)
+    # el puesto (set 2023)
+    # ost (set 2023)
+    # santa-graciana (set 2023)
+    # yaguari (set 2023)
+    # sierra vista (oct 2023)
+    # AI shorts
 ```

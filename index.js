@@ -16,20 +16,18 @@ for (var csvDataIdx = 1; csvDataIdx < csvData.length; csvDataIdx++) {
     // Set content in the layers
     var thisCSVRow = csvData[csvDataIdx].split(',')
     // Toros
-    // setContentInLayer(thisCSVRow[0], '_lot')
-    // setContentInLayer(thisCSVRow[1], '_top_data')
-    // setContentInLayer(thisCSVRow[2] + '     RP: ' + thisCSVRow[3], '_bottom_data')
-    // Vaquillonas
-    setContentInLayer(thisCSVRow[0], '_lot')
-    setContentInLayer(thisCSVRow[1], '_bottom_data')
+    setContentInLayer(thisCSVRow[0], '_rp')
+    setContentInLayer('EDAD: ' + thisCSVRow[1], '_edad')
+    setContentInLayer('PADRE: ' + thisCSVRow[2], '_padre')
+    setContentInLayer('MADRE: ' + thisCSVRow[3], '_madre')
+    setContentInLayer('ABUELO MATERNO: ' + thisCSVRow[4], '_abuelo')
 
     // Apply template and customize path & file name
     var item = app.project.renderQueue.items.add(app.project.activeItem)
     var outputModule = item.outputModule(1)
     var outputFolder = "~/Desktop/mograph/"
     outputModule.applyTemplate("High Quality with Alpha")
-    // outputModule.file = File(outputFolder + thisCSVRow[3])
-    outputModule.file = File(outputFolder + thisCSVRow[1])
+    outputModule.file = File(outputFolder + thisCSVRow[0])
 
     app.project.renderQueue.render()
 }

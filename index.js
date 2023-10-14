@@ -1,5 +1,4 @@
-// var csvFile = File('~/Desktop/toros.csv')
-var csvFile = File('~/Desktop/vaquillonas.csv')
+var csvFile = File('~/Desktop/list.csv')
 
 var csvData = []
 
@@ -16,18 +15,16 @@ for (var csvDataIdx = 1; csvDataIdx < csvData.length; csvDataIdx++) {
     // Set content in the layers
     var thisCSVRow = csvData[csvDataIdx].split(',')
     // Toros
-    setContentInLayer(thisCSVRow[0], '_rp')
-    setContentInLayer('EDAD: ' + thisCSVRow[1], '_edad')
-    setContentInLayer('PADRE: ' + thisCSVRow[2], '_padre')
-    setContentInLayer('MADRE: ' + thisCSVRow[3], '_madre')
-    setContentInLayer('ABUELO MATERNO: ' + thisCSVRow[4], '_abuelo')
+    setContentInLayer('LOTE ' + thisCSVRow[0], '_lote')
+    setContentInLayer(thisCSVRow[1], '_cat')
+    setContentInLayer('RP: ' + thisCSVRow[2], '_rps')
 
     // Apply template and customize path & file name
     var item = app.project.renderQueue.items.add(app.project.activeItem)
     var outputModule = item.outputModule(1)
     var outputFolder = "~/Desktop/mograph/"
-    outputModule.applyTemplate("High Quality with Alpha")
-    outputModule.file = File(outputFolder + thisCSVRow[0])
+    outputModule.applyTemplate("png+alpha")
+    outputModule.file = File(outputFolder + thisCSVRow[0] + " " + thisCSVRow[1])
 
     app.project.renderQueue.render()
 }

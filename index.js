@@ -1,4 +1,4 @@
-var csvFile = File('~/Desktop/list.csv')
+var csvFile = File('~/Desktop/subts.csv')
 
 var csvData = []
 
@@ -11,21 +11,16 @@ do {
 } while (!csvFile.eof)
 csvFile.close()
 
-for (var csvDataIdx = 1; csvDataIdx < csvData.length; csvDataIdx++) {
+for (var csvDataIdx = 0; csvDataIdx < csvData.length; csvDataIdx++) {
     // Set content in the layers
     var thisCSVRow = csvData[csvDataIdx].split(',')
-    // Toros
-    setContentInLayer('LOTE ' + thisCSVRow[0], '_lote')
-    setContentInLayer(thisCSVRow[1], '_cat')
-    setContentInLayer('RP: ' + thisCSVRow[2], '_rps')
-
+    setContentInLayer(thisCSVRow[0], '_editable')
     // Apply template and customize path & file name
     var item = app.project.renderQueue.items.add(app.project.activeItem)
     var outputModule = item.outputModule(1)
     var outputFolder = "~/Desktop/mograph/"
-    outputModule.applyTemplate("png+alpha")
-    outputModule.file = File(outputFolder + thisCSVRow[0] + " " + thisCSVRow[1])
-
+    outputModule.applyTemplate("High Quality with Alpha")
+    outputModule.file = File(outputFolder + csvDataIdx + " " + thisCSVRow[0])
     app.project.renderQueue.render()
 }
 alert('Done!')

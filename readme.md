@@ -1,10 +1,10 @@
 ## Automate the manual process of setting huge amount of text content in different layers.
 
-Part of my job at TV is to post-produce large amounts of videos for streaming. The manual work in After Effects is: copy data from an excel file, paste it into the composition and render, then repeat this process for each video. The problem comes when the amount of data to display is too much and the videos are too many.
-
-<img src='./capture.jpg' />
+This script automates a manual work in After Effects that involves copying data from an excel file, pasting it into the composition, rendering and start again.
 
 This script automates the whole process: For each row in the CSV file, it copies the data, sets it in the text layers, and renders the composition in the selected video format. This way, a job of hours is reduced to minutes.
+
+<img src='./capture.jpg' />
 
 ## Instructions:
 
@@ -48,11 +48,24 @@ This version of the script is running with this example data, to automate your o
 ## Tested in:
 
 ```sh
-    # After Effects 2022
+    # Adobe After Effects 2022
 ```
 ## Versions:
 
 ```sh
-    # Original (index.js)
-    # Bachino names (may 2023)
+    # Basic script (main branch)
+    # angus-abr-2024
+    # video-subts
+    # yubely-oct-2023
+    # sierravista-oct-2023
+    # ai-shorts
+    # delparana-set-2023
+    # baqueano-set-2023
+    # yaguari-set-2023
+    # ost-set-2023
+    # barracas-set-2023
+    # santa-graciana-set-2023
+    # el-puesto-set-2023
+    # la-oracion-2023
+    # san-alberto-2023
 ```

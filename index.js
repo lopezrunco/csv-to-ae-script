@@ -1,4 +1,4 @@
-var csvFile = File('~/Desktop/Baqueano-lotes-especiales.csv')
+var csvFile = File('~/Desktop/angus.csv')
 
 var csvData = []
 
@@ -14,8 +14,8 @@ csvFile.close()
 for (var csvDataIdx = 1; csvDataIdx < csvData.length; csvDataIdx++) {
     // Set content in the layers
     var thisCSVRow = csvData[csvDataIdx].split(',')
-    setContentInLayer(thisCSVRow[0], '_rp')
-    setContentInLayer(thisCSVRow[1], '_pig')
+    setContentInLayer(thisCSVRow[0], '_lote')
+    setContentInLayer(thisCSVRow[1], '_desc')
 
     // Apply template and customize path & file name
     var item = app.project.renderQueue.items.add(app.project.activeItem)

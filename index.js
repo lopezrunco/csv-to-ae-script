@@ -1,4 +1,4 @@
-var csvFile = File('~/Desktop/angus.csv')
+var csvFile = File('~/Desktop/list.csv')
 
 var csvData = []
 
@@ -14,15 +14,23 @@ csvFile.close()
 for (var csvDataIdx = 1; csvDataIdx < csvData.length; csvDataIdx++) {
     // Set content in the layers
     var thisCSVRow = csvData[csvDataIdx].split(',')
-    setContentInLayer(thisCSVRow[0], '_lote')
-    setContentInLayer(thisCSVRow[1], '_desc')
+    setContentInLayer(thisCSVRow[1], '_rp')
+    setContentInLayer(thisCSVRow[3], '_fechanac')
+    setContentInLayer(thisCSVRow[5], '_padre')
+    setContentInLayer(thisCSVRow[6], '_madre')
+    setContentInLayer(thisCSVRow[8], '_lact')
+    setContentInLayer(thisCSVRow[9], '_edad')
+    setContentInLayer(thisCSVRow[10], '_dias')
+    setContentInLayer(thisCSVRow[11] + "KG", '_leche')
+    setContentInLayer("G" + thisCSVRow[12], '_grasa')
+    setContentInLayer("P" + thisCSVRow[13], '_proteina')
 
     // Apply template and customize path & file name
     var item = app.project.renderQueue.items.add(app.project.activeItem)
     var outputModule = item.outputModule(1)
     var outputFolder = "~/Desktop/mograph/"
-    outputModule.applyTemplate("High Quality with Alpha")
-    outputModule.file = File(outputFolder + thisCSVRow[0])
+    outputModule.applyTemplate("pngalfa")
+    outputModule.file = File(outputFolder + thisCSVRow[1])
 
     app.project.renderQueue.render()
 }

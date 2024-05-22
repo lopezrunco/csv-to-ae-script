@@ -14,23 +14,19 @@ csvFile.close()
 for (var csvDataIdx = 1; csvDataIdx < csvData.length; csvDataIdx++) {
     // Set content in the layers
     var thisCSVRow = csvData[csvDataIdx].split(',')
-    setContentInLayer(thisCSVRow[1], '_rp')
-    setContentInLayer(thisCSVRow[3], '_fechanac')
-    setContentInLayer(thisCSVRow[5], '_padre')
-    setContentInLayer(thisCSVRow[6], '_madre')
-    setContentInLayer(thisCSVRow[8], '_lact')
-    setContentInLayer(thisCSVRow[9], '_edad')
-    setContentInLayer(thisCSVRow[10], '_dias')
-    setContentInLayer(thisCSVRow[11] + "KG", '_leche')
-    setContentInLayer("G" + thisCSVRow[12], '_grasa')
-    setContentInLayer("P" + thisCSVRow[13], '_proteina')
+
+    // Output:LOTE 3 | SUJETA LAS PIEDRITAS
+    setContentInLayer("LOTE " + thisCSVRow[0] + " | " + thisCSVRow[1], '_line1')
+
+    // Output: RP 247 | 4/11/20 | IDOLO LAS PIEDRITAS | FAJA PAMPA LAS PIEDRITAS X RUCALQUIN JABADO
+    setContentInLayer("RP " + thisCSVRow[2] + " | " + thisCSVRow[3] + " | " + thisCSVRow[4] + " | " + thisCSVRow[5] + " X " + thisCSVRow[6], '_line2')
 
     // Apply template and customize path & file name
     var item = app.project.renderQueue.items.add(app.project.activeItem)
     var outputModule = item.outputModule(1)
     var outputFolder = "~/Desktop/mograph/"
-    outputModule.applyTemplate("pngalfa")
-    outputModule.file = File(outputFolder + thisCSVRow[1])
+    outputModule.applyTemplate("High Quality with Alpha")
+    outputModule.file = File(outputFolder + thisCSVRow[2])
 
     app.project.renderQueue.render()
 }

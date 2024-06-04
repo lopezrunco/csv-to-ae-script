@@ -18,8 +18,11 @@ for (var csvDataIdx = 1; csvDataIdx < csvData.length; csvDataIdx++) {
     // Output:LOTE 3 | SUJETA LAS PIEDRITAS
     setContentInLayer("LOTE " + thisCSVRow[0] + " | " + thisCSVRow[1], '_line1')
 
-    // Output: RP 247 | 4/11/20 | IDOLO LAS PIEDRITAS | FAJA PAMPA LAS PIEDRITAS X RUCALQUIN JABADO
-    setContentInLayer("RP " + thisCSVRow[2] + " | " + thisCSVRow[3] + " | " + thisCSVRow[4] + " | " + thisCSVRow[5] + " X " + thisCSVRow[6], '_line2')
+    // Output: RP 247 | 4/11/20
+    setContentInLayer("RP " + thisCSVRow[2] + " | " + thisCSVRow[3], '_line2')
+
+    // Output: IDOLO LAS PIEDRITAS | FAJA PAMPA LAS PIEDRITAS X RUCALQUIN JABADO
+    setContentInLayer(thisCSVRow[4] + " X " + thisCSVRow[5] + " (" + thisCSVRow[6] + ") ", '_line3')
 
     // Apply template and customize path & file name
     var item = app.project.renderQueue.items.add(app.project.activeItem)

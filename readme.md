@@ -1,71 +1,73 @@
-## Automate the manual process of setting huge amount of text content in different layers.
+# Automate CSV to Adobe After Effects Script.
 
-This script automates a manual work in After Effects that involves copying data from an excel file, pasting it into the composition, rendering and start again.
-
-This script automates the whole process: For each row in the CSV file, it copies the data, sets it in the text layers, and renders the composition in the selected video format. This way, a job of hours is reduced to minutes.
+This script automates the process of setting a large amount of text content into different layers in Adobe After Effects. It significantly reduces manual effort by importing data from a CSV file, applying it to text layers within a composition, rendering the video, and repeating the process for each row of data.
 
 <img src='./capture.jpg' />
 
+## Features
+
+- **Automation**: Copies data from a CSV file and sets it into After Effects compositions.
+- **Efficiency**: Converts hours of manual work into minutes.
+- **Customization**: Easily adaptable for different CSV formats and After Effects projects.
+
+
 ## Instructions:
 
-1. Open the terminal and clone the repo
+1. **Clone the repository**:
    ```sh
    git clone https://github.com/lopezrunco/csv-to-ae-script
-   ```
-2. Export your Excel file in .csv format (values separated by commas). You can use the sample file "list.csv" in the assets folder for tests.
 
-```sh
-    # .csv example data:
+2. **Prepare your data**:
+    Export your Excel file as a .csv format (values separated by commas). Use the provided sample file "list.csv" in the assets folder for testing.
 
-    Lote,Categoria,Cant.,Peso,Clase,Estado,Dpto,Propietario
-    -------------------------------------------------------
-    76,Terneras,71,184 kg,MBB,B,Durazno,EL PUESTO
-    45,Terneras,56,180 kg,MB,MB,Florida,BATALLA SDI
-    32,Vacas,78,160 kg,B,MBB,Canelones,BATALLA SDI
-    56,Toros,66,175 kg,MBB,MB,Flores,EL PUESTO
-    26,Toros,44,80 kg,MBB,MB,Flores,BATALLA SDI
-    77,Terneras,32,175 kg,MB,MB,Artigas,BATALLA SDI
-    98,Vacas,67,180 kg,MB,MB,Colonia,EL PUESTO
-    12,Toros,69,127 kg,MBB,B,San Jose,EL PUESTO
-    22,Vacas,61,166 kg,MBB,MBB,Flores,BATALLA SDI
-    35,Toros,68,189 kg,MB,MB,Maldonado,BATALLA SDI
-```
+    **Example CSV data**:
 
-This version of the script is running with this example data, to automate your own work, you have to customize the script according to your data.
+    ```sh
 
-3. Go to index.js and edit the variable *csvFile* adding the path to the .csv file in your computer.
+        Lote,Categoria,Cant.,Peso,Clase,Estado,Dpto,Propietario
+        -------------------------------------------------------
+        76,Terneras,71,184 kg,MBB,B,Durazno,EL PUESTO
+        45,Terneras,56,180 kg,MB,MB,Florida,BATALLA SDI
+        ... (additional rows)
+    ```
 
-```js
-    var csvFile = File('~/Documents/list.csv')
-```
+    This version of the script is running with this example data, to automate your own work, you have to customize the script according to your data.
 
-4. Go to the After Effects sample project (ae-project.aep). Click in *Edit > Templates - Output module templates* and set the default output to your preference.
+3. **Configure the script**:
+    Edit index.js and set the csvFile variable to point to your CSV file:
 
-5. Run the script *index.js*
+    ```js
+        var csvFile = File('~/Documents/list.csv')
+    ```
 
-(According to the content your're working on, you might need to edit the motion graphics).
+4. **Set up After Effects**:
+    Open the included After Effects sample project (ae-project.aep). Navigate to Edit > Templates > Output module templates and set your preferred default output settings.
 
-## Tested in:
+5. **Run the script:**:
+    Execute index.js to start the automation process.
 
-```sh
-    # Adobe After Effects 2022
-```
+Note: Depending on your specific project needs, you may need to adjust the motion graphics and other parameters within After Effects.
+
+## Compatibility
+Tested on Adobe After Effects 2022.
+
 ## Versions:
 
 ```sh
-    # Basic script (main branch)
-    # angus-abr-2024
-    # video-subts
-    # yubely-oct-2023
-    # sierravista-oct-2023
-    # ai-shorts
-    # delparana-set-2023
-    # baqueano-set-2023
-    # yaguari-set-2023
-    # ost-set-2023
-    # barracas-set-2023
-    # santa-graciana-set-2023
-    # el-puesto-set-2023
-    # la-oracion-2023
-    # san-alberto-2023
+    - Basic script (main branch)
+    - angus
+    - baqueano
+    - barracas
+    - elpuesto
+    - main
+    - ost
+    - parana
+    - piedritas
+    - sanalberto
+    - santagraciana
+    - shorts
+    - sierravista
+    - subtitles
+    - yaguari
+    - yubely
 ```

@@ -14,22 +14,15 @@ csvFile.close()
 for (var csvDataIdx = 1; csvDataIdx < csvData.length; csvDataIdx++) {
     // Set content in the layers
     var thisCSVRow = csvData[csvDataIdx].split(',')
-
-    // Output:LOTE 3 | SUJETA LAS PIEDRITAS
-    setContentInLayer("LOTE " + thisCSVRow[0] + " | " + thisCSVRow[1], '_line1')
-
-    // Output: RP 247 | 4/11/20
-    setContentInLayer("RP " + thisCSVRow[2] + " | " + thisCSVRow[3], '_line2')
-
-    // Output: IDOLO LAS PIEDRITAS | FAJA PAMPA LAS PIEDRITAS X RUCALQUIN JABADO
-    setContentInLayer(thisCSVRow[4] + " X " + thisCSVRow[5] + " (" + thisCSVRow[6] + ") ", '_line3')
+    setContentInLayer(thisCSVRow[1], '_line1')
+    setContentInLayer(thisCSVRow[2], '_line2')
 
     // Apply template and customize path & file name
     var item = app.project.renderQueue.items.add(app.project.activeItem)
     var outputModule = item.outputModule(1)
     var outputFolder = "~/Desktop/mograph/"
     outputModule.applyTemplate("High Quality with Alpha")
-    outputModule.file = File(outputFolder + thisCSVRow[2])
+    outputModule.file = File(outputFolder + thisCSVRow[0])
 
     app.project.renderQueue.render()
 }

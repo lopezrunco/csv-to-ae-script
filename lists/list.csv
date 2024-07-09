@@ -1,28 +1,29 @@
-Lote,Line1,Line2
-1,Alebreeze,Padre: Wild Event (Usa)
-2,Andiamo Via (Brz),Padre: Shanghai Bobby (Usa)
-3,Dalara,Padre: Storm Surge (Usa)
-4,Flash Glory,Padre: Honour And Gory (Usa)
-5,Isadora MT,Padre: Midas Touch (GB)
-6,Isca Glory,Padre: Honour And Gory (Usa)
-7,Ivanka MT,Padre: Midas Touch (GB)
-8,La Eminencia,Padre: Mogador (Usa)
-9,La Zorrilla,Padre: Honour And Gory (Usa)
-10,Lady Pippa  (Brz),Padre: Public Purse (Usa)
-11,Magenta MP,Padre: Majesticperfection (Usa)
-12,Nube Rosa,Potra 3 años
-13,Plenty Of Spirit (Usa),Padre: Unbridled`s Song (Usa)
-14,Pure Smile (Arg.),Padre: Halo Sunshine (USA)
-15,Little Glory,Madre: Nube rosa
-16,Madame Curie FT,Training o madre
-18,Pequeña Peque,Potra 1 año
-19,Pretty Filly,Potra 1 año
-20,De Locos,Potro 1 año
-21,Dinámico,Potro 1 año
-22,Patton Trem,Potro 1 año
-23,Pirincho MT,Potro 1 año
-24,Potribreeze,Potro 1 año
-25,Power Smile,Potro 1 año
-26,Prescott,Potro 1 año
-27,Prossimo,Potro 1 año
-28,Bambolino,Padrillo
+Lote,Nombre,Categoria,Prenez
+1,Alebreeze,Madre Preñada,Preñada por: Algorithms
+2,Andiamo Via (Brz),Madre Preñada,Preñada por: Algorithms
+3,Dalara,Madre Preñada,Preñada por: Equal Courrier
+4,Flash Glory,Madre Preñada,Preñada por: Algorithms
+5,Isadora MT,Madre Preñada,Preñada por: Aero Trem
+6,Isca Glory,Madre Preñada,Preñada por: Equal Courrier
+7,Ivanka MT,Madre Preñada,Preñada por: Posse
+8,La Eminencia,Madre Preñada,Preñada por: A Little Warm
+9,La Zorrilla,Madre Preñada,Preñada por: Algorithms
+10,Lady Pippa (Brz),Madre Preñada,Preñada por: Equal Courrier
+11,Magenta MP,Madre Preñada,Preñada por: Algorithms
+12,Nube Rosa,POTRA 3 AÑOS,Con derecho a servicio
+13,Plenty Of Spirit (Usa),Madre Preñada,Preñada por: Equal Courrier
+14,Pure Smile (Arg.),Madre Preñada,Preñada por: Algorithms
+15,Little Glory,Madre,Con derecho a servicio
+16,Madame Curie FT,MADRE O TRAINNING,Con derecho a servicio
+17,La Mejicana,MADRE O TRAINNING,Con derecho a servicio
+18,Pequeña Peque,Potranca 2023, ,
+19,Pretty Filly,Potranca 2023, ,
+20,De Locos,Potrillo 2023, ,
+21,Dinámico,Potrillo 2023, ,
+22,Patton Trem,Potrillo 2023, ,
+23,Pirincho MT,Potrillo 2023, ,
+24,Potribreeze,Potrillo 2023, ,
+25,Power Smile,Potrillo 2023, ,
+26,Prescott,Potrillo 2023, ,
+27,Prossimo,Potrillo 2023, ,
+28,Bambolino,Padrillo, ,

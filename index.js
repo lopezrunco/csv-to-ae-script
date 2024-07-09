@@ -14,8 +14,10 @@ csvFile.close()
 for (var csvDataIdx = 1; csvDataIdx < csvData.length; csvDataIdx++) {
     // Set content in the layers
     var thisCSVRow = csvData[csvDataIdx].split(',')
-    setContentInLayer(thisCSVRow[1], '_line1')
-    setContentInLayer(thisCSVRow[2], '_line2')
+    setContentInLayer(thisCSVRow[0], '_lot')
+    setContentInLayer(thisCSVRow[1], '_name')
+    setContentInLayer(thisCSVRow[2], '_category')
+    setContentInLayer(thisCSVRow[3], '_pren')
 
     // Apply template and customize path & file name
     var item = app.project.renderQueue.items.add(app.project.activeItem)

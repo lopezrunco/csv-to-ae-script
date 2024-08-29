@@ -1,5 +1,4 @@
-// var csvFile = File('~/Desktop/el-puesto-lotes.csv')
-var csvFile = File('~/Desktop/el-puesto-lotes-rps.csv')
+var csvFile = File('~/Desktop/list.csv')
 var csvData = []
 
 // Read line by line and push the data in csvData
@@ -21,9 +20,8 @@ for (var csvDataIdx = 1; csvDataIdx < csvData.length; csvDataIdx++) {
     var item = app.project.renderQueue.items.add(app.project.activeItem)
     var outputModule = item.outputModule(1)
     var outputFolder = "~/Desktop/rendered/"
-    // outputModule.applyTemplate("PNGAlfa")
+    outputModule.applyTemplate("pngalfa")
     outputModule.file = File(outputFolder + thisCSVRow[0] + " " + thisCSVRow[1])
-    // outputModule.file = File(outputFolder + thisCSVRow[0])
 
     app.project.renderQueue.render()
 }

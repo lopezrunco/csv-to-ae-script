@@ -68,6 +68,7 @@ Tested on Adobe After Effects 2022.
     - shorts
     - sierravista
     - subtitles
+    - tilos
     - yaguari
     - yubely
 ```

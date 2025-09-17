@@ -1,4 +1,4 @@
-var csvFile = File('~/Desktop/toros-hereford.csv')
+var csvFile = File('~/Desktop/hembras-hereford.csv')
 
 var csvData = []
 

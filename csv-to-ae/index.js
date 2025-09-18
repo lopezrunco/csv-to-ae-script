@@ -1,4 +1,4 @@
-var csvFile = File('~/Desktop/hembras-angus.csv')
+var csvFile = File('~/Desktop/toros-hereford.csv')
 
 var csvData = []
 
@@ -18,12 +18,12 @@ for (var csvDataIdx = 1; csvDataIdx < csvData.length; csvDataIdx++) {
     setContentInLayer('RP: ' + thisCSVRow[0], '_rp')
 
     // Angus
-    setContentInLayer('PN: ' + thisCSVRow[2] + '    PD: ' + thisCSVRow[3] + '     P18m: ' + thisCSVRow[4] + '     PAV: ' + thisCSVRow[5] + '     CE: ' + thisCSVRow[6], '_data1')
-    setContentInLayer('HL: ' + thisCSVRow[7] + '    AOB: ' + thisCSVRow[8] + '     EGS: ' + thisCSVRow[9] + '     MARB: ' + thisCSVRow[10], '_data2')
+    // setContentInLayer('PN: ' + thisCSVRow[2] + '    PD: ' + thisCSVRow[3] + '     P18m: ' + thisCSVRow[4] + '     PAV: ' + thisCSVRow[5] + '     CE: ' + thisCSVRow[6], '_data1')
+    // setContentInLayer('HL: ' + thisCSVRow[7] + '    AOB: ' + thisCSVRow[8] + '     EGS: ' + thisCSVRow[9] + '     MARB: ' + thisCSVRow[10], '_data2')
 
     // Hereford
-    // setContentInLayer('FPd: ' + thisCSVRow[2] + '    PN: ' + thisCSVRow[3] + '     PD: ' + thisCSVRow[4] + '     18m: ' + thisCSVRow[5] + '     PAV: ' + thisCSVRow[6] + '     FPm: ' + thisCSVRow[7] + '     HL: ' + thisCSVRow[8], '_data1')
-    // setContentInLayer('AOB: ' + thisCSVRow[9] + '    GR: ' + thisCSVRow[10] + '     MAR: ' + thisCSVRow[11] + '     CE: ' + thisCSVRow[12] + '     Icr: ' + thisCSVRow[13] + '     Ico: ' + thisCSVRow[14], '_data2')
+    setContentInLayer('FPd: ' + thisCSVRow[2] + '    PN: ' + thisCSVRow[3] + '     PD: ' + thisCSVRow[4] + '     18m: ' + thisCSVRow[5] + '     PAV: ' + thisCSVRow[6] + '     FPm: ' + thisCSVRow[7] + '     HL: ' + thisCSVRow[8], '_data1')
+    setContentInLayer('AOB: ' + thisCSVRow[9] + '    GR: ' + thisCSVRow[10] + '     MAR: ' + thisCSVRow[11] + '     CE: ' + thisCSVRow[12] + '     Icr: ' + thisCSVRow[13] + '     Ico: ' + thisCSVRow[14], '_data2')
 
     // Hembras Hereford
     // setContentInLayer('FPd: ' + thisCSVRow[2] + '    PN: ' + thisCSVRow[3] + '     PD: ' + thisCSVRow[4] + '     18: ' + thisCSVRow[5] + '     PAV: ' + thisCSVRow[6] + '     CE: ' + thisCSVRow[7] + '     FPM: ' + thisCSVRow[8], '_data1')

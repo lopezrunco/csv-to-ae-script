@@ -1,4 +1,4 @@
-var csvFile = File('~/Documents/list.csv')
+var csvFile = File('~/Desktop/list.csv')
 var csvData = []
 
 // Read line by line and push the data in csvData
@@ -12,26 +12,28 @@ csvFile.close()
 
 // Loops the csvData array, and for every row set the content in the selected text layer and render the comp 
 for (var csvDataIdx = 1; csvDataIdx < csvData.length; csvDataIdx++) {
+    // Set content in the layers
     var thisCSVRow = csvData[csvDataIdx].split(',')
-    setContentInLayer(thisCSVRow[0], '_rp')
-    setContentInLayer(thisCSVRow[1], '_fechanac')
-    setContentInLayer(thisCSVRow[2], '_padre')
-    setContentInLayer(thisCSVRow[3], '_madre')
-    setContentInLayer(thisCSVRow[4], '_lact')
-    setContentInLayer(thisCSVRow[5], '_edad')
-    setContentInLayer(thisCSVRow[6], '_dias')
-    setContentInLayer(thisCSVRow[7], '_leche')
-    setContentInLayer(thisCSVRow[8], '_grasa')
-    setContentInLayer(thisCSVRow[9], '_proteina')
-    app.project.item(1).name = thisCSVRow[0] // Set the value of 'rp' field as the output name
-    app.project.renderQueue.items.add(app.project.item(1))
+
+    setContentInLayer(thisCSVRow[0], '_lote')
+    setContentInLayer(thisCSVRow[1], '_rp')
+    setContentInLayer(thisCSVRow[2], '_peso')
+    setContentInLayer(thisCSVRow[3], '_ce')
+
+    // Apply template and customize path & file name
+    var item = app.project.renderQueue.items.add(app.project.activeItem)
+    var outputModule = item.outputModule(1)
+    var outputFolder = "~/Desktop/rendered/"
+    outputModule.applyTemplate("pngalfa")
+    outputModule.file = File(outputFolder + 'Lote ' + thisCSVRow[0] + ' RP ' + thisCSVRow[1])
+
     app.project.renderQueue.render()
 }
-alert('All renders are finished')
+alert('Done!')
 
 function setContentInLayer(content, layer) {
-    // Select _render comp
-    var comp = app.project.item(1)
+    // Select active compostition
+    var comp = app.project.activeItem
     // Select layer and set new text
     var layer = comp.layer(layer)
     var textProp = layer.property("Source Text")

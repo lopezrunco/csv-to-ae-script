@@ -14,22 +14,17 @@ csvFile.close()
 for (var csvDataIdx = 1; csvDataIdx < csvData.length; csvDataIdx++) {
     // Set content in the layers
     var thisCSVRow = csvData[csvDataIdx].split(',')
-    setContentInLayer(thisCSVRow[0], '_rp')
-    setContentInLayer('RP Padre: ' + thisCSVRow[1], '_padre')
-    setContentInLayer('Peso al nacer: ' + thisCSVRow[2] + ' | ' + 'Peso al destete: ' + thisCSVRow[3] + ' | ' + 'Peso de 18 meses: ' + thisCSVRow[4], '_data1')
-
-    // list 1
-    setContentInLayer('LECHE: ' + thisCSVRow[5] + ' | ' + 'AOB: ' + thisCSVRow[6] + ' | ' + 'CE(cm): ' + thisCSVRow[7] + ' | ' + 'Pig: ' + thisCSVRow[8], '_data2')
-
-    // list 2
-    // setContentInLayer('LECHE: ' + thisCSVRow[5] + ' | ' + 'AOB: ' + thisCSVRow[6] + ' | ' + 'MARB: ' + thisCSVRow[7] + ' | ' + 'C.ESC: ' + thisCSVRow[8], '_data2')
+    setContentInLayer(thisCSVRow[0], '_lote')
+    setContentInLayer(thisCSVRow[1], '_rps')
+    setContentInLayer(thisCSVRow[2], '_category')
+    setContentInLayer(thisCSVRow[3], '_rp')
 
     // Apply template and customize path & file name
     var item = app.project.renderQueue.items.add(app.project.activeItem)
     var outputModule = item.outputModule(1)
     var outputFolder = "~/Desktop/rendered/"
-    outputModule.applyTemplate("High Quality with Alpha")
-    outputModule.file = File(outputFolder + thisCSVRow[0])
+    outputModule.applyTemplate("pngalfa")
+    outputModule.file = File(outputFolder + thisCSVRow[0] + " - " + thisCSVRow[3])
 
     app.project.renderQueue.render()
 }

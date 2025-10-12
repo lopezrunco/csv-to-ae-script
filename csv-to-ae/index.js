@@ -1,4 +1,5 @@
-var csvFile = File('~/Desktop/list.csv')
+// var csvFile = File('~/Desktop/hereford.csv')
+var csvFile = File('~/Desktop/angus.csv')
 
 var csvData = []
 
@@ -14,22 +15,24 @@ csvFile.close()
 for (var csvDataIdx = 1; csvDataIdx < csvData.length; csvDataIdx++) {
     // Set content in the layers
     var thisCSVRow = csvData[csvDataIdx].split(',')
-    setContentInLayer(thisCSVRow[0], '_rp')
-    setContentInLayer('RP Padre: ' + thisCSVRow[1], '_padre')
-    setContentInLayer('Peso al nacer: ' + thisCSVRow[2] + ' | ' + 'Peso al destete: ' + thisCSVRow[3] + ' | ' + 'Peso de 18 meses: ' + thisCSVRow[4], '_data1')
-
-    // list 1
-    setContentInLayer('LECHE: ' + thisCSVRow[5] + ' | ' + 'AOB: ' + thisCSVRow[6] + ' | ' + 'CE(cm): ' + thisCSVRow[7] + ' | ' + 'Pig: ' + thisCSVRow[8], '_data2')
-
-    // list 2
-    // setContentInLayer('LECHE: ' + thisCSVRow[5] + ' | ' + 'AOB: ' + thisCSVRow[6] + ' | ' + 'MARB: ' + thisCSVRow[7] + ' | ' + 'C.ESC: ' + thisCSVRow[8], '_data2')
+    setContentInLayer(thisCSVRow[0], '_breed')
+    setContentInLayer('RP: ' + thisCSVRow[1], '_rp')
+    
+    // Line 1 (Common for hereford and angus lists)
+    setContentInLayer('Nacido: ' + thisCSVRow[2] + ' | ' + 'PN: ' + thisCSVRow[3] + ' | ' + 'Padre: ' + thisCSVRow[4] + ' | ' + 'AB.Mat: ' + thisCSVRow[5], '_line1')
+    
+    // Line 2 (Only Hereford)
+    // setContentInLayer('FPD: ' + thisCSVRow[6] + ' | NAC: ' + thisCSVRow[7] + ' | DES: ' + thisCSVRow[8] + ' | 18M: ' + thisCSVRow[9] + ' | PAV: ' + thisCSVRow[10] + ' | LCH: ' + thisCSVRow[11] + ' | FPM: ' + thisCSVRow[12] + ' | AOB: ' + thisCSVRow[13] + ' | GRS: ' + thisCSVRow[14] + ' | CE: ' + thisCSVRow[15] + ' | ICR: ' + thisCSVRow[16] + ' | IC: ' + thisCSVRow[17], '_line2');
+    
+    // Line 2 (Only Angus)
+    setContentInLayer('NAC: ' + thisCSVRow[6] + ' | DES: ' + thisCSVRow[7] + ' | 18M: ' + thisCSVRow[8] + ' | PAV: ' + thisCSVRow[9] + ' | LCH: ' + thisCSVRow[10] + ' | AOB: ' + thisCSVRow[11] + ' | Marb: ' + thisCSVRow[12] + ' | GRS: ' + thisCSVRow[13] + ' | CE: ' + thisCSVRow[14], '_line2');
 
     // Apply template and customize path & file name
     var item = app.project.renderQueue.items.add(app.project.activeItem)
     var outputModule = item.outputModule(1)
     var outputFolder = "~/Desktop/rendered/"
-    outputModule.applyTemplate("High Quality with Alpha")
-    outputModule.file = File(outputFolder + thisCSVRow[0])
+    outputModule.applyTemplate("pngalfa")
+    outputModule.file = File(outputFolder + thisCSVRow[1])
 
     app.project.renderQueue.render()
 }
